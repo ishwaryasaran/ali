@@ -1,52 +1,135 @@
-body {
-  background: #ffe6eb;
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.card {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-  position: relative;
-  width: 320px;
+body {
+    background-color: #ffe6f7;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+
+.container {
+    padding: 40px;
+}
+
+.hero {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.floating-hearts {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    animation: float 4s ease-in-out infinite;
+}
+
+.heart {
+    font-size: 50px;
+    animation: floatHeart 4s ease-in-out infinite;
+}
+
+.emoji-wave {
+    font-size: 50px;
+    animation: wave 1.5s infinite;
 }
 
 h1 {
-  color: #e63946;
-  margin-bottom: 30px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f072a7;
+    margin-top: 20px;
 }
 
-button {
-  padding: 15px 25px;
-  font-size: 18px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.question-section {
+    margin-top: 60px;
+    color: #ff4c94;
 }
 
-#yesBtn {
-  background: #e63946;
-  color: white;
+.puns {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 20px;
 }
 
-#noBtn {
-  background: #ccc;
-  color: #333;
-  position: absolute;
+h2 {
+    font-size: 2.5rem;
+    color: #ff4c94;
+    font-weight: 800;
 }
 
 .buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  position: relative;
-  height: 80px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.yes-button {
+    background-color: #ff76d1;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 118, 209, 0.6);
+}
+
+.no-button {
+    background-color: #ffb6c1;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 182, 193, 0.6);
+}
+
+.yes-button:hover {
+    transform: scale(1.1);
+}
+
+.no-button:hover {
+    transform: scale(1.1);
+}
+
+.no-button:hover {
+    animation: shrink 1s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes floatHeart {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes wave {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes shrink {
+    0% { transform: scale(1); }
+    100% { transform: scale(0.2); }
+}
+
+#confetti {
+    display: none;
 }
